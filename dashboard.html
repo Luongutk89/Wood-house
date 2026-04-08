@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Nhà Gỗ Lê Nguyên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
+            <a href="projects.html">Công trình</a>
+            <a href="process.html">Quy trình</a>
+            <a href="contact.html">Liên hệ</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+        </nav>
+        <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
+    </header>
+
+    <!-- DASHBOARD HERO -->
+    <section class="dash-hero">
+        <div class="dash-hero-content">
+            <h1>Bảng Điều Khiển</h1>
+            <p>Tổng quan hoạt động kinh doanh & quản lý công trình</p>
+        </div>
+    </section>
+
+    <!-- KPI CARDS -->
+    <section class="dash-section">
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-icon">🏠</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Tổng công trình</span>
+                    <span class="kpi-value" data-target="527">0</span>
+                    <span class="kpi-change positive">+12% so với năm trước</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">💰</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Doanh thu (tỷ VNĐ)</span>
+                    <span class="kpi-value" data-target="48.5" data-decimal="1">0</span>
+                    <span class="kpi-change positive">+18% so với năm trước</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">👥</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Khách hàng mới</span>
+                    <span class="kpi-value" data-target="89">0</span>
+                    <span class="kpi-change positive">+24% so với quý trước</span>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">⭐</div>
+                <div class="kpi-info">
+                    <span class="kpi-label">Đánh giá trung bình</span>
+                    <span class="kpi-value" data-target="4.9" data-decimal="1">0</span>
+                    <span class="kpi-change positive">+0.2 so với năm trước</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHARTS SECTION -->
+    <section class="dash-section">
+        <div class="dash-grid-2">
+            <!-- Revenue Chart -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Doanh thu theo tháng (tỷ VNĐ)</h3>
+                    <div class="dash-tabs">
+                        <button class="dash-tab active" data-period="monthly">Tháng</button>
+                        <button class="dash-tab" data-period="quarterly">Quý</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Project Types Chart -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Phân loại công trình</h3>
+                </div>
+                <div class="chart-container">
+                    <canvas id="projectTypeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS TABLE & ACTIVITY -->
+    <section class="dash-section">
+        <div class="dash-grid-2">
+            <!-- Active Projects Table -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Công trình đang thi công</h3>
+                    <span class="dash-badge">8 công trình</span>
+                </div>
+                <div class="dash-table-wrap">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Công trình</th>
+                                <th>Địa điểm</th>
+                                <th>Tiến độ</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Nhà gỗ 5 gian</strong></td>
+                                <td>Ninh Bình</td>
+                                <td>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:85%"></div></div>
+                                    <span class="progress-text">85%</span>
+                                </td>
+                                <td><span class="status-badge status-active">Đang thi công</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhà thờ họ Trần</strong></td>
+                                <td>Hà Nam</td>
+                                <td>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:62%"></div></div>
+                                    <span class="progress-text">62%</span>
+                                </td>
+                                <td><span class="status-badge status-active">Đang thi công</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhà gỗ Lim 3 gian</strong></td>
+                                <td>Thanh Hóa</td>
+                                <td>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+                                    <span class="progress-text">40%</span>
+                                </td>
+                                <td><span class="status-badge status-active">Đang thi công</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhà sàn gỗ Pơmu</strong></td>
+                                <td>Hòa Bình</td>
+                                <td>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div>
+                                    <span class="progress-text">95%</span>
+                                </td>
+                                <td><span class="status-badge status-review">Nghiệm thu</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Đình làng Phú Thọ</strong></td>
+                                <td>Phú Thọ</td>
+                                <td>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:15%"></div></div>
+                                    <span class="progress-text">15%</span>
+                                </td>
+                                <td><span class="status-badge status-new">Mới khởi công</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nhà gỗ 3 gian</strong></td>
+                                <td>Bắc Giang</td>
+                                <td>
+                                    <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+                                    <span class="progress-text">100%</span>
+                                </td>
+                                <td><span class="status-badge status-done">Hoàn thành</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Hoạt động gần đây</h3>
+                </div>
+                <div class="activity-feed">
+                    <div class="activity-item">
+                        <div class="activity-dot dot-green"></div>
+                        <div class="activity-content">
+                            <p><strong>Nhà gỗ 3 gian</strong> - Bắc Giang đã hoàn thành nghiệm thu</p>
+                            <span class="activity-time">2 giờ trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-blue"></div>
+                        <div class="activity-content">
+                            <p>Khách hàng mới <strong>Nguyễn Văn Hùng</strong> - Yêu cầu tư vấn nhà gỗ 5 gian</p>
+                            <span class="activity-time">4 giờ trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-gold"></div>
+                        <div class="activity-content">
+                            <p>Hợp đồng mới ký kết: <strong>Đình làng Phú Thọ</strong> - 3.2 tỷ VNĐ</p>
+                            <span class="activity-time">1 ngày trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-green"></div>
+                        <div class="activity-content">
+                            <p><strong>Nhà sàn gỗ Pơmu</strong> - Hòa Bình đạt tiến độ 95%</p>
+                            <span class="activity-time">1 ngày trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-orange"></div>
+                        <div class="activity-content">
+                            <p>Nhập gỗ Lim nguyên liệu - <strong>25m³</strong> cho dự án Thanh Hóa</p>
+                            <span class="activity-time">2 ngày trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-blue"></div>
+                        <div class="activity-content">
+                            <p>Đánh giá 5 sao từ khách hàng <strong>Trần Thị Mai</strong> - Ninh Bình</p>
+                            <span class="activity-time">3 ngày trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-gold"></div>
+                        <div class="activity-content">
+                            <p>Thanh toán đợt 2: <strong>Nhà thờ họ Trần</strong> - 1.8 tỷ VNĐ</p>
+                            <span class="activity-time">4 ngày trước</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-dot dot-green"></div>
+                        <div class="activity-content">
+                            <p>Hoàn thành lắp dựng khung chính: <strong>Nhà gỗ 5 gian</strong> - Ninh Bình</p>
+                            <span class="activity-time">5 ngày trước</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MATERIALS & TEAM -->
+    <section class="dash-section">
+        <div class="dash-grid-2">
+            <!-- Materials Overview -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Tồn kho nguyên liệu</h3>
+                </div>
+                <div class="materials-list">
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Gỗ Lim</span>
+                            <span class="material-qty">120 m³</span>
+                        </div>
+                        <div class="material-bar">
+                            <div class="material-fill" style="width:75%; background: var(--c400)"></div>
+                        </div>
+                        <span class="material-status good">Đủ hàng</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Gỗ Gụ</span>
+                            <span class="material-qty">85 m³</span>
+                        </div>
+                        <div class="material-bar">
+                            <div class="material-fill" style="width:55%; background: var(--c400)"></div>
+                        </div>
+                        <span class="material-status good">Đủ hàng</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Gỗ Pơmu</span>
+                            <span class="material-qty">30 m³</span>
+                        </div>
+                        <div class="material-bar">
+                            <div class="material-fill" style="width:25%; background: #e67e22"></div>
+                        </div>
+                        <span class="material-status warning">Sắp hết</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Gỗ Sến</span>
+                            <span class="material-qty">65 m³</span>
+                        </div>
+                        <div class="material-bar">
+                            <div class="material-fill" style="width:45%; background: var(--c400)"></div>
+                        </div>
+                        <span class="material-status good">Đủ hàng</span>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-info">
+                            <span class="material-name">Gỗ Hương</span>
+                            <span class="material-qty">15 m³</span>
+                        </div>
+                        <div class="material-bar">
+                            <div class="material-fill" style="width:12%; background: #e74c3c"></div>
+                        </div>
+                        <span class="material-status danger">Cần nhập thêm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Performance -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Đội thi công</h3>
+                    <span class="dash-badge">6 đội</span>
+                </div>
+                <div class="team-list">
+                    <div class="team-item">
+                        <div class="team-avatar">NT</div>
+                        <div class="team-info">
+                            <strong>Đội Nguyễn Thành</strong>
+                            <span>Nhà gỗ 5 gian - Ninh Bình</span>
+                        </div>
+                        <span class="team-members">12 thợ</span>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-avatar">LV</div>
+                        <div class="team-info">
+                            <strong>Đội Lê Văn</strong>
+                            <span>Nhà thờ họ Trần - Hà Nam</span>
+                        </div>
+                        <span class="team-members">15 thợ</span>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-avatar">PH</div>
+                        <div class="team-info">
+                            <strong>Đội Phạm Hải</strong>
+                            <span>Nhà gỗ Lim - Thanh Hóa</span>
+                        </div>
+                        <span class="team-members">10 thợ</span>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-avatar">TĐ</div>
+                        <div class="team-info">
+                            <strong>Đội Trần Đức</strong>
+                            <span>Nhà sàn gỗ Pơmu - Hòa Bình</span>
+                        </div>
+                        <span class="team-members">8 thợ</span>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-avatar">HN</div>
+                        <div class="team-info">
+                            <strong>Đội Hoàng Nam</strong>
+                            <span>Đình làng - Phú Thọ</span>
+                        </div>
+                        <span class="team-members">18 thợ</span>
+                    </div>
+                    <div class="team-item">
+                        <div class="team-avatar">VT</div>
+                        <div class="team-info">
+                            <strong>Đội Vũ Tuấn</strong>
+                            <span>Chờ phân công</span>
+                        </div>
+                        <span class="team-members">10 thợ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">
+                    <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+                </div>
+                <p>Chuyên thi công nhà gỗ truyền thống Việt Nam cao cấp với hơn 15 năm kinh nghiệm.</p>
+            </div>
+            <div>
+                <h4>Liên kết</h4>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="projects.html">Công trình</a></li>
+                    <li><a href="process.html">Quy trình</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Liên hệ</h4>
+                <ul>
+                    <li>📞 090.123.4567</li>
+                    <li>✉️ info@nhago-vip.vn</li>
+                    <li>📍 Hà Nội, Việt Nam</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Nhà Gỗ Lê Nguyên. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="/dashboard.js"></script>
+</body>
+
+</html>
