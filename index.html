@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Gỗ Lê Nguyên - Thi Công Nhà Gỗ Cao Cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/script.js">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+    <a href="index.html" class="logo">
+        <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="projects.html">Công trình</a>
+        <a href="process.html">Quy trình</a>
+        <a href="contact.html">Liên hệ</a>
+    </nav>
+
+    <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
+</header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <div class="hero-badge">⭐ Thương hiệu uy tín #1 toàn quốc</div>
+                <h1>Thi Công <span>Nhà Gỗ</span> Cao Cấp</h1>
+                <p class="hero-desc">Chạm khắc tinh xảo — đẳng cấp vượt thời gian. Chúng tôi mang đến những công trình
+                    gỗ truyền thống Việt Nam chuẩn mực nhất.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-gold">Xem công trình</a>
+                    <a href="#contact" class="btn btn-ghost">Nhận báo giá</a>
+                </div>
+                <div class="hero-stats" style="margin-bottom: 30px;">
+                    <div class="hero-stat">
+                        <div class="num"> 500+ </div>
+                        <div class="lbl">Công trình hoàn thành</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="num">15+</div>
+                        <div class="lbl">Năm kinh nghiệm</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="num">98%</div>
+                        <div class="lbl">Khách hàng hài lòng</div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div class="hero-imgs">
+                <div class="img-card">
+                    <img src="/image/img1.jpg" alt="">
+                    <span>Nhà gỗ 5 gian – Ninh Bình</span>
+                </div>
+                <div class="img-card">
+                    <img src="/image/img2.jpg" alt="">
+                    <span>Gỗ Lim cao cấp</span>
+                </div>
+                <div class="img-card">
+                    <img src="/image/img3.jpg" alt="">
+                    <span>Nhà thờ họ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <div class="section-bg">
+        <div class="search-wrap">
+            <h2>🔍 Tìm mẫu nhà gỗ phù hợp</h2>
+            <div class="search-bar">
+                <select id="woodType">
+                    <option value="">🪵 Loại gỗ</option>
+                    <option value="lim">Gỗ Lim</option>
+                    <option value="go">Gỗ Gõ Đỏ</option>
+                    <option value="huong">Gỗ Hương</option>
+                    <option value="mit">Gỗ Mít</option>
+                </select>
+                <select id="style">
+                    <option value="">🏠 Kiểu nhà</option>
+                    <option value="3gian">Nhà 3 gian</option>
+                    <option value="5gian">Nhà 5 gian</option>
+                    <option value="thuho">Nhà thờ họ</option>
+                    <option value="taynam">Nhà kiểu Tây</option>
+                </select>
+                <input type="number" id="area" placeholder="📐 Diện tích (m²)">
+                <button onclick="searchHouse()">Tìm kiếm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="section">
+        <div class="section-header">
+            <div class="eyebrow">Tại sao chọn chúng tôi</div>
+            <h2>Cam kết chất lượng vượt trội</h2>
+            <p>Đơn vị thi công nhà gỗ uy tín với đội ngũ nghệ nhân lành nghề nhiều năm kinh nghiệm</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌳</div>
+                <h3>Gỗ nguyên chất</h3>
+                <p>100% gỗ rừng trồng hợp pháp, qua xử lý kỹ thuật cao — đảm bảo bền vững hàng chục năm.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔨</div>
+                <h3>Thợ lành nghề</h3>
+                <p>Đội ngũ nghệ nhân được đào tạo bài bản, tích lũy kinh nghiệm thực tế nhiều năm.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📐</div>
+                <h3>Thiết kế theo yêu cầu</h3>
+                <p>Tư vấn và thiết kế riêng biệt từng công trình, phù hợp địa hình và phong thủy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Bảo hành 10 năm</h3>
+                <p>Cam kết bảo hành toàn bộ công trình 10 năm, hỗ trợ bảo trì trọn đời sau đó.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <div class="section-bg">
+        <section class="section" id="projects">
+            <div class="section-header">
+                <div class="eyebrow">Công trình tiêu biểu</div>
+                <h2>Những mẫu nhà gỗ nổi bật</h2>
+                <p>Hơn 500 công trình hoàn thành, mỗi ngôi nhà là một kiệt tác truyền thống</p>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="card-img">
+                        <div class="card-img-inner">
+                            <div class="ico">🏡</div><span>Nhà gỗ 3 gian</span>
+                        </div><span class="tag">Nhà 3 gian</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Nhà gỗ 3 gian truyền thống</h3>
+                        <div class="card-meta">120m² · Gỗ Lim · Thanh Hóa</div>
+                        <div class="card-foot">
+                            <div class="price">1,2 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
+                                tiết →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-img">
+                        <div class="card-img-inner">
+                            <div class="ico">🏛️</div><span>Nhà thờ họ</span>
+                        </div><span class="tag">Nhà thờ tổ</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Nhà thờ họ đặc biệt</h3>
+                        <div class="card-meta">180m² · Gỗ Hương · Nam Định</div>
+                        <div class="card-foot">
+                            <div class="price">3,5 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
+                                tiết →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-img">
+                        <div class="card-img-inner">
+                            <div class="ico">🏠</div><span>Nhà 5 gian</span>
+                        </div><span class="tag">Nhà 5 gian</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Nhà gỗ 5 gian rộng rãi</h3>
+                        <div class="card-meta">200m² · Gỗ Gõ · Ninh Bình</div>
+                        <div class="card-foot">
+                            <div class="price">2,8 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
+                                tiết →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-img">
+                        <div class="card-img-inner">
+                            <div class="ico">🏡</div><span>Nhà kiểu Tây</span>
+                        </div><span class="tag">Kiểu Tây</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Nhà gỗ phong cách Tây</h3>
+                        <div class="card-meta">140m² · Gỗ Lim · Hà Nội</div>
+                        <div class="card-foot">
+                            <div class="price">1,8 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
+                                tiết →</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="card-img">
+                        <div class="card-img-inner">
+                            <div class="ico">🎋</div><span>Nhà cổ</span>
+                        </div><span class="tag">Cổ truyền</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Nhà gỗ cổ truyền thống</h3>
+                        <div class="card-meta">150m² · Gỗ Mít · Bắc Ninh</div>
+                        <div class="card-foot">
+                            <div class="price">2,2 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
+                                tiết →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PROCESS -->
+    <section class="process-section" id="process">
+        <div class="process-inner">
+            <div class="section-header">
+                <div class="eyebrow">Quy trình thi công</div>
+                <h2>4 bước đơn giản — nhà đẹp như mơ</h2>
+                <p>Quy trình chuyên nghiệp từ tư vấn đến bàn giao công trình</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Tư vấn & Khảo sát</h4>
+                    <p>Gặp gỡ, lắng nghe nhu cầu và khảo sát thực địa để đưa ra phương án tối ưu</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Thiết kế & Báo giá</h4>
+                    <p>Lập bản thiết kế 3D chi tiết và báo giá minh bạch, cam kết không phát sinh</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Thi công</h4>
+                    <p>Đội thợ lành nghề thi công theo đúng bản vẽ, tiến độ đúng hẹn, chất lượng cao</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Bàn giao & Bảo hành</h4>
+                    <p>Nghiệm thu kỹ lưỡng, bàn giao tận nơi và hỗ trợ bảo hành trọn đời</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section">
+        <div class="section-header">
+            <div class="eyebrow">Khách hàng nói gì</div>
+            <h2>Hàng nghìn khách hàng tin tưởng</h2>
+            <p>Phản hồi thực tế từ khách hàng đã trải nghiệm dịch vụ của chúng tôi</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Chất lượng thi công xuất sắc, đội thợ rất chuyên nghiệp và nhiệt tình. Ngôi nhà hoàn thành đúng tiến
+                    độ và vượt kỳ vọng của gia đình tôi."</p>
+                <div class="reviewer">
+                    <div class="avatar">NV</div>
+                    <div class="reviewer-info">
+                        <div class="name">Nguyễn Văn Hùng</div>
+                        <div class="place">Thanh Hóa</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Nhà thờ họ được thi công rất đẹp, chạm khắc tinh xảo. Anh em trong họ ai cũng khen ngợi. Xứng đáng 5
+                    sao!"</p>
+                <div class="reviewer">
+                    <div class="avatar">TT</div>
+                    <div class="reviewer-info">
+                        <div class="name">Trần Thị Lan</div>
+                        <div class="place">Nam Định</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Báo giá minh bạch, không phát sinh chi phí. Đội ngũ tư vấn tận tình, hỗ trợ mọi lúc. Sẽ giới thiệu
+                    cho bạn bè."</p>
+                <div class="reviewer">
+                    <div class="avatar">PD</div>
+                    <div class="reviewer-info">
+                        <div class="name">Phạm Đức Minh</div>
+                        <div class="place">Hà Nội</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <div class="section-bg" id="contact">
+        <div class="contact-inner">
+            <div class="contact-left">
+                <h2>Liên hệ tư vấn miễn phí</h2>
+                <p>Để lại thông tin, chúng tôi sẽ liên hệ lại trong vòng 30 phút để tư vấn chi tiết về công trình của
+                    bạn.</p>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-ico">📞</div>
+                        <div>
+                            <div class="info-lbl">Điện thoại</div>
+                            <div class="info-val">0901 234 567 / 0912 345 678</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-ico">📍</div>
+                        <div>
+                            <div class="info-lbl">Địa chỉ</div>
+                            <div class="info-val">Số 123 Đường Láng, Đống Đa, Hà Nội</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-ico">🕐</div>
+                        <div>
+                            <div class="info-lbl">Giờ làm việc</div>
+                            <div class="info-val">Thứ 2 – CN: 7:00 – 19:00</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-ico">✉️</div>
+                        <div>
+                            <div class="info-lbl">Email</div>
+                            <div class="info-val">info@nhago-vip.vn</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-card">
+                <h3>Gửi yêu cầu tư vấn</h3>
+                <form onsubmit="sendForm(event)">
+                    <div class="form-row">
+                        <div class="form-group"><label>Họ và tên *</label><input type="text" placeholder="Nguyễn Văn A"
+                                required></div>
+                        <div class="form-group"><label>Số điện thoại *</label><input type="tel"
+                                placeholder="0901 234 567" required></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Loại công trình</label>
+                        <select>
+                            <option value="">Chọn loại nhà gỗ</option>
+                            <option>Nhà gỗ 3 gian</option>
+                            <option>Nhà gỗ 5 gian</option>
+                            <option>Nhà thờ họ</option>
+                            <option>Nhà gỗ kiểu Tây</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>Nhu cầu & ghi chú</label><textarea rows="4"
+                            placeholder="Mô tả ngắn về công trình bạn muốn xây dựng..."></textarea></div>
+                    <button type="submit" class="form-submit">📨 Gửi yêu cầu tư vấn</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">🪵</div>
+                    <h2>Nhà Gỗ VIP</h2>
+                </div>
+                <p>Đơn vị thi công nhà gỗ cao cấp hàng đầu Việt Nam. Hơn 15 năm kinh nghiệm, 500+ công trình trên toàn
+                    quốc.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">💬</a>
+                    <a href="#" class="social-link">▶️</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Dịch vụ</h4>
+                <ul>
+                    <li><a href="#">Nhà gỗ 3 gian</a></li>
+                    <li><a href="#">Nhà gỗ 5 gian</a></li>
+                    <li><a href="#">Nhà thờ họ</a></li>
+                    <li><a href="#">Nhà kiểu Tây</a></li>
+                    <li><a href="#">Sửa chữa nhà gỗ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Thông tin</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Công trình</a></li>
+                    <li><a href="#">Bảng giá</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tìm chúng tôi</h4>
+                <div class="map-box">
+                    <div class="ico">🗺️</div><span>Số 123 Đường Láng, Hà Nội</span>
+                </div>
+                <a href="https://maps.app.goo.gl/SU9f4RUDiNF7imm86" target="_blank" class="map-link">📍 Xem trên Google
+                    Maps →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Nhà Gỗ VIP. Bảo lưu mọi quyền.</span>
+            <div style="display:flex;gap:18px"><a href="#">Chính sách bảo mật</a><a href="#">Điều khoản dịch vụ</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:0901234567" class="call-btn" title="Gọi ngay">📞</a>
+
+    
+</body>
+
+</html>

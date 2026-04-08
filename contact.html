@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Công trình</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="projects.html">Công trình</a>
+            <a href="process.html">Quy trình</a>
+            <a href="contact.html">Liên hệ</a>
+        </nav>
+
+        <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
+    </header>
+    <!-- ===== contact ===== -->
+    <div class="section-bg" id="contact">
+        <div class="contact-inner">
+            <div class="contact-left">
+                <h2>Liên hệ tư vấn miễn phí</h2>
+                <p>Để lại thông tin, chúng tôi sẽ liên hệ lại trong vòng 30 phút để tư vấn chi tiết về công trình
+                    của
+                    bạn.</p>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-ico">📞</div>
+                        <div>
+                            <div class="info-lbl">Điện thoại</div>
+                            <div class="info-val">0901 234 567 / 0912 345 678</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-ico">📍</div>
+                        <div>
+                            <div class="info-lbl">Địa chỉ</div>
+                            <div class="info-val">Số 123 Đường Láng, Đống Đa, Hà Nội</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-ico">🕐</div>
+                        <div>
+                            <div class="info-lbl">Giờ làm việc</div>
+                            <div class="info-val">Thứ 2 – CN: 7:00 – 19:00</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-ico">✉️</div>
+                        <div>
+                            <div class="info-lbl">Email</div>
+                            <div class="info-val">info@nhago-vip.vn</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-card">
+                <h3>Gửi yêu cầu tư vấn</h3>
+                <form onsubmit="sendForm(event)">
+                    <div class="form-row">
+                        <div class="form-group"><label>Họ và tên *</label><input type="text" placeholder="Nguyễn Văn A"
+                                required></div>
+                        <div class="form-group"><label>Số điện thoại *</label><input type="tel"
+                                placeholder="0901 234 567" required></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Loại công trình</label>
+                        <select>
+                            <option value="">Chọn loại nhà gỗ</option>
+                            <option>Nhà gỗ 3 gian</option>
+                            <option>Nhà gỗ 5 gian</option>
+                            <option>Nhà thờ họ</option>
+                            <option>Nhà gỗ kiểu Tây</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>Nhu cầu & ghi chú</label><textarea rows="4"
+                            placeholder="Mô tả ngắn về công trình bạn muốn xây dựng..."></textarea></div>
+                    <button type="submit" class="form-submit">📨 Gửi yêu cầu tư vấn</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">🪵</div>
+                    <h2>Nhà Gỗ VIP</h2>
+                </div>
+                <p>Đơn vị thi công nhà gỗ cao cấp hàng đầu Việt Nam. Hơn 15 năm kinh nghiệm, 500+ công trình trên
+                    toàn
+                    quốc.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">💬</a>
+                    <a href="#" class="social-link">▶️</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Dịch vụ</h4>
+                <ul>
+                    <li><a href="#">Nhà gỗ 3 gian</a></li>
+                    <li><a href="#">Nhà gỗ 5 gian</a></li>
+                    <li><a href="#">Nhà thờ họ</a></li>
+                    <li><a href="#">Nhà kiểu Tây</a></li>
+                    <li><a href="#">Sửa chữa nhà gỗ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Thông tin</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Công trình</a></li>
+                    <li><a href="#">Bảng giá</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tìm chúng tôi</h4>
+                <div class="map-box">
+                    <div class="ico">🗺️</div><span>Số 123 Đường Láng, Hà Nội</span>
+                </div>
+                <a href="https://maps.app.goo.gl/SU9f4RUDiNF7imm86" target="_blank" class="map-link">📍 Xem trên
+                    Google
+                    Maps →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Nhà Gỗ VIP. Bảo lưu mọi quyền.</span>
+            <div style="display:flex;gap:18px"><a href="#">Chính sách bảo mật</a><a href="#">Điều khoản dịch vụ</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="tel:0901234567" class="call-btn" title="Gọi ngay">📞</a>
+
+
+</body>
+
+</html>
