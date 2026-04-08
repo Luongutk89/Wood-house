@@ -1,3 +1,24 @@
+/* ── CSS VARIABLES ── */
+:root {
+    --c50:  #fdf6ee;
+    --c100: #f5e6cc;
+    --c200: #e8c88a;
+    --c400: #c8902a;
+    --c600: #a06818;
+    --c800: #6b3f0a;
+    --c900: #3d1f03;
+
+    --text:   #2c1c08;
+    --muted:  #8b7355;
+    --border: rgba(139, 94, 26, 0.15);
+
+    --r8:  8px;
+    --r12: 12px;
+    --r16: 16px;
+
+    --shadow: 0 2px 12px rgba(44, 28, 8, 0.08);
+}
+
 /* ── DASHBOARD STYLES ── */
 
 /* Hero */
@@ -6,6 +27,11 @@
     padding: 6rem 5% 3rem;
     text-align: center;
     color: #fff;
+}
+
+.dash-hero-content {
+    max-width: 1260px;
+    margin: 0 auto;
 }
 
 .dash-hero h1 {
@@ -285,9 +311,9 @@
     margin-top: .35rem;
 }
 
-.dot-green { background: #27ae60; }
-.dot-blue { background: #2980b9; }
-.dot-gold { background: var(--c400); }
+.dot-green  { background: #27ae60; }
+.dot-blue   { background: #2980b9; }
+.dot-gold   { background: #c8902a; }
 .dot-orange { background: #e67e22; }
 
 .activity-content p {
@@ -354,9 +380,9 @@
     text-align: right;
 }
 
-.material-status.good { color: #27ae60; }
+.material-status.good    { color: #27ae60; }
 .material-status.warning { color: #e67e22; }
-.material-status.danger { color: #e74c3c; }
+.material-status.danger  { color: #e74c3c; }
 
 /* Team */
 .team-list {
@@ -381,7 +407,7 @@
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--c400), var(--c600));
+    background: var(--c400);
     color: #fff;
     display: flex;
     align-items: center;
@@ -413,6 +439,34 @@
     font-weight: 500;
     white-space: nowrap;
 }
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: .8rem 1.4rem;
+    border-radius: var(--r12);
+    font-size: .8rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: all .3s ease;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast-success { background: #27ae60; }
+.toast-info    { background: #2980b9; }
+.toast-warning { background: #e67e22; }
+.toast-error   { background: #e74c3c; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {

@@ -32,7 +32,7 @@
     <section class="dash-hero">
         <div class="dash-hero-content">
             <h1>Bảng Điều Khiển</h1>
-            <p>Tổng quan hoạt động kinh doanh & quản lý công trình</p>
+            <p>Tổng quan hoạt động kinh doanh &amp; quản lý công trình</p>
         </div>
     </section>
 
@@ -95,9 +95,35 @@
             <div class="dash-card">
                 <div class="dash-card-header">
                     <h3>Phân loại công trình</h3>
+                    <span class="dash-badge">6 loại</span>
                 </div>
                 <div class="chart-container">
                     <canvas id="projectTypeChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECOND CHARTS ROW -->
+    <section class="dash-section">
+        <div class="dash-grid-2">
+            <!-- Growth Line Chart -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>So sánh doanh thu năm nay / năm trước</h3>
+                </div>
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Region Bar Chart -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h3>Dự án theo tỉnh / thành</h3>
+                </div>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="regionChart"></canvas>
                 </div>
             </div>
         </div>
@@ -264,7 +290,7 @@
                             <span class="material-qty">120 m³</span>
                         </div>
                         <div class="material-bar">
-                            <div class="material-fill" style="width:75%; background: var(--c400)"></div>
+                            <div class="material-fill" style="width:75%; background:#c8902a"></div>
                         </div>
                         <span class="material-status good">Đủ hàng</span>
                     </div>
@@ -274,7 +300,7 @@
                             <span class="material-qty">85 m³</span>
                         </div>
                         <div class="material-bar">
-                            <div class="material-fill" style="width:55%; background: var(--c400)"></div>
+                            <div class="material-fill" style="width:55%; background:#c8902a"></div>
                         </div>
                         <span class="material-status good">Đủ hàng</span>
                     </div>
@@ -284,7 +310,7 @@
                             <span class="material-qty">30 m³</span>
                         </div>
                         <div class="material-bar">
-                            <div class="material-fill" style="width:25%; background: #e67e22"></div>
+                            <div class="material-fill" style="width:25%; background:#e67e22"></div>
                         </div>
                         <span class="material-status warning">Sắp hết</span>
                     </div>
@@ -294,7 +320,7 @@
                             <span class="material-qty">65 m³</span>
                         </div>
                         <div class="material-bar">
-                            <div class="material-fill" style="width:45%; background: var(--c400)"></div>
+                            <div class="material-fill" style="width:45%; background:#c8902a"></div>
                         </div>
                         <span class="material-status good">Đủ hàng</span>
                     </div>
@@ -304,7 +330,7 @@
                             <span class="material-qty">15 m³</span>
                         </div>
                         <div class="material-bar">
-                            <div class="material-fill" style="width:12%; background: #e74c3c"></div>
+                            <div class="material-fill" style="width:12%; background:#e74c3c"></div>
                         </div>
                         <span class="material-status danger">Cần nhập thêm</span>
                     </div>
@@ -371,40 +397,66 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-logo">
-                    <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">🪵</div>
+                        <h2>Nhà Gỗ VIP</h2>
+                    </div>
+                    <p>Đơn vị thi công nhà gỗ cao cấp hàng đầu Việt Nam. Hơn 15 năm kinh nghiệm, 500+ công trình trên
+                        toàn
+                        quốc.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">💬</a>
+                        <a href="#" class="social-link">▶️</a>
+                    </div>
                 </div>
-                <p>Chuyên thi công nhà gỗ truyền thống Việt Nam cao cấp với hơn 15 năm kinh nghiệm.</p>
+                <div class="footer-col">
+                    <h4>Dịch vụ</h4>
+                    <ul>
+                        <li><a href="#">Nhà gỗ 3 gian</a></li>
+                        <li><a href="#">Nhà gỗ 5 gian</a></li>
+                        <li><a href="#">Nhà thờ họ</a></li>
+                        <li><a href="#">Nhà kiểu Tây</a></li>
+                        <li><a href="#">Sửa chữa nhà gỗ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Thông tin</h4>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Công trình</a></li>
+                        <li><a href="#">Bảng giá</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tìm chúng tôi</h4>
+                    <div class="map-box">
+                        <div class="ico">🗺️</div><span>Số 123 Đường Láng, Hà Nội</span>
+                    </div>
+                    <a href="https://maps.app.goo.gl/SU9f4RUDiNF7imm86" target="_blank" class="map-link">📍 Xem trên
+                        Google
+                        Maps →</a>
+                </div>
             </div>
-            <div>
-                <h4>Liên kết</h4>
-                <ul>
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="about.html">Giới thiệu</a></li>
-                    <li><a href="projects.html">Công trình</a></li>
-                    <li><a href="process.html">Quy trình</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <span>© 2025 Nhà Gỗ VIP. Bảo lưu mọi quyền.</span>
+                <div style="display:flex;gap:18px"><a href="#">Chính sách bảo mật</a><a href="#">Điều khoản dịch vụ</a>
+                </div>
             </div>
-            <div>
-                <h4>Liên hệ</h4>
-                <ul>
-                    <li>📞 090.123.4567</li>
-                    <li>✉️ info@nhago-vip.vn</li>
-                    <li>📍 Hà Nội, Việt Nam</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Nhà Gỗ Lê Nguyên. All rights reserved.</span>
-        </div>
-    </footer>
+        </footer>
+
+        <a href="tel:0901234567" class="call-btn" title="Gọi ngay">📞</a>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script src="/dashboard.js"></script>
+    <script src="/dashboard.js" defer></script>
 </body>
 
 </html>
