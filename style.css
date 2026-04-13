@@ -140,16 +140,23 @@ img {
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
-    height: 80px;
-    background: rgba(255, 253, 249, .96);
-    backdrop-filter: blur(8px);
+    height: 72px;
+    background: rgba(255, 253, 249, .97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    height: 72px;
+}
+
+.logo img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-icon {
@@ -177,10 +184,11 @@ img {
 .nav-links a {
     padding: .5em 1.1em;
     border-radius: var(--r8);
-    font-size: clamp(.9rem, 1.1vw, 1.1rem);
+    font-size: clamp(.88rem, 1vw, 1rem);
     font-weight: 500;
     color: var(--muted);
     transition: all .2s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -188,28 +196,97 @@ img {
     color: var(--c600);
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .nav-cta {
     padding: .6em 1.4em;
     background: var(--c600);
     color: #fff;
     border-radius: var(--r8);
-    font-size: clamp(.9rem, 1.1vw, 1.05rem);
+    font-size: clamp(.85rem, 1vw, 1rem);
     font-weight: 500;
     transition: background .2s;
+    white-space: nowrap;
 }
 
 .nav-cta:hover {
     background: var(--c800);
 }
 
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: var(--r8);
+    transition: background .2s;
+}
+
+.hamburger:hover {
+    background: var(--c50);
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--c800);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s, width .3s;
+    transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    z-index: 98;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.nav-overlay.show {
+    opacity: 1;
+}
+
+/* Mobile-only CTA inside nav */
+.nav-mobile-cta {
+    display: none !important;
+}
+
 /* ── HERO ── */
 .hero {
     position: relative;
-    height: 120vh;
-    min-height: 120vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: visible;
+    padding-top: 72px; /* exactly navbar height */
 }
 
 .hero::before {
@@ -234,8 +311,7 @@ img {
     position: relative;
     z-index: 1;
     width: 100%;
-    padding: 0 6%;
-    padding-top: 80px;
+    padding: 3rem 6%;
     display: grid;
     grid-template-columns: 55fr 45fr;
     gap: 3rem;
@@ -482,13 +558,18 @@ img {
     overflow: hidden;
 }
 
-.project-card:first-child .card-img {
-    height: 300px;
-}
-
+/* Ảnh thật trong card */
 .card-img img {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.project-card:hover .card-img img {
+    transform: scale(1.06);
 }
 
 .card-img-inner {
@@ -1228,12 +1309,79 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    /* Show hamburger, hide desktop nav & CTA */
+    .hamburger {
+        display: flex;
+    }
 
-    .nav-links,
-    .nav-cta {
+    .nav-links {
+        display: none; /* hidden by default on mobile */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: min(300px, 80vw);
+        background: #fff;
+        flex-direction: column;
+        padding: 88px 1.5rem 2rem;
+        gap: 4px;
+        z-index: 99;
+        overflow-y: auto;
+        box-shadow: -4px 0 24px rgba(44,28,8,.15);
+        transform: translateX(100%);
+        transition: transform .3s ease;
+    }
+
+    .nav-links.open {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-overlay {
+        display: block;
+        pointer-events: none;
+    }
+
+    .nav-overlay.show {
+        pointer-events: all;
+    }
+
+    .nav-links a {
+        padding: .75em 1rem;
+        font-size: 1rem;
+        border-radius: var(--r8);
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links a:hover {
+        background: var(--c50);
+        color: var(--c600);
+    }
+
+    .nav-mobile-cta {
+        display: flex !important;
+        justify-content: center;
+        background: var(--c600) !important;
+        color: #fff !important;
+        border-radius: var(--r10) !important;
+        font-weight: 600 !important;
+        margin-top: 1rem;
+        border: none !important;
+    }
+
+    /* Hide desktop CTA button, keep hamburger */
+    .nav-right .nav-cta {
         display: none;
     }
+}
+
+@media (max-width: 768px) {
 
     .hero h1 {
         font-size: clamp(1.9rem, 7vw, 2.5rem);
@@ -1269,13 +1417,10 @@ footer {
 }
 
 /* ── FIX IMG HERO (ADD ONLY) ── */
-
-/* đảm bảo img nằm đúng trong card */
 .img-card {
     position: relative;
 }
 
-/* ảnh mượt + zoom */
 .img-card img {
     width: 100%;
     height: 100%;
@@ -1287,7 +1432,6 @@ footer {
     transform: scale(1.08);
 }
 
-/* overlay tối nhẹ cho dễ đọc chữ */
 .img-card::after {
     content: "";
     position: absolute;
@@ -1295,7 +1439,6 @@ footer {
     background: rgba(0, 0, 0, 0.25);
 }
 
-/* text trên ảnh */
 .img-card span {
     position: absolute;
     bottom: 10px;
@@ -1307,20 +1450,6 @@ footer {
     background: rgba(0, 0, 0, 0.45);
     padding: 4px 8px;
     border-radius: 6px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    /* khớp navbar */
-}
-
-.logo img {
-    height: 130px;
-    /* chuẩn đẹp */
-    width: auto;
-    object-fit: contain;
 }
 /* ── CERTIFICATES ── */
 .cert-grid {
@@ -1381,16 +1510,65 @@ footer {
 .gallery-item {
     border-radius: var(--r16);
     overflow: hidden;
-    background: linear-gradient(135deg, var(--c200), var(--c600));
     position: relative;
     cursor: pointer;
     transition: transform .2s, box-shadow .2s;
+    background: linear-gradient(135deg, var(--c200), var(--c600));
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
     box-shadow: 0 12px 40px rgba(44,28,8,.2);
     z-index: 2;
+}
+
+/* Ảnh thật */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+/* Caption overlay xuất hiện khi hover */
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1rem .9rem;
+    background: linear-gradient(to top, rgba(44,28,8,.85) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transform: translateY(6px);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-caption .g-lbl {
+    font-size: .82rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.gallery-caption .g-badge {
+    font-size: .68rem;
+    background: rgba(200,144,42,.8);
+    color: #fff;
+    padding: .2em .6em;
+    border-radius: 20px;
+    width: fit-content;
 }
 
 .gi-large {
@@ -1402,6 +1580,7 @@ footer {
     grid-row: span 2;
 }
 
+/* giữ lại class cũ phòng dùng nơi khác */
 .gallery-placeholder {
     width: 100%;
     height: 100%;
@@ -1412,25 +1591,9 @@ footer {
     gap: 8px;
     color: rgba(255,255,255,.85);
 }
-
-.g-ico {
-    font-size: 2.8rem;
-}
-
-.g-lbl {
-    font-size: .8rem;
-    font-weight: 500;
-    text-align: center;
-    padding: 0 1rem;
-}
-
-.g-badge {
-    font-size: .7rem;
-    background: rgba(0,0,0,.35);
-    padding: .25em .7em;
-    border-radius: 20px;
-    color: #fff;
-}
+.g-ico { font-size: 2.8rem; }
+.g-lbl { font-size: .8rem; font-weight: 500; text-align: center; padding: 0 1rem; }
+.g-badge { font-size: .7rem; background: rgba(0,0,0,.35); padding: .25em .7em; border-radius: 20px; color: #fff; }
 
 /* ── PRICING ── */
 .pricing-grid {

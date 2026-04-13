@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/script.js">
-    <link rel="icon" type="image/png" href="/image/logo.png"  >
+    <link rel="icon" type="image/png" href="/image/logo.png" style="height: 20px; width: 20px;" >
     <style>
 
     </style>
@@ -17,22 +17,31 @@
 <body>
 
     <!-- NAVBAR -->
-    <header class="navbar">
-    <a href="index.html" class="logo">
-        <img src="/image/logo.png" alt="Nhà Gỗ VIP">
-    </a>
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+        </a>
 
-    <nav class="nav-links">
-        <a href="index.html">Trang chủ</a>
-        <a href="about.html">Giới thiệu</a>
-        <a href="projects.html">Công trình</a>
-        <a href="process.html">Quy trình</a>
-        <a href="contact.html">Liên hệ</a>
-        <a href="dashboard.html">Dashboard</a>
-    </nav>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" onclick="closeMenu()">Trang chủ</a>
+            <a href="about.html" onclick="closeMenu()">Giới thiệu</a>
+            <a href="projects.html" onclick="closeMenu()">Công trình</a>
+            <a href="process.html" onclick="closeMenu()">Quy trình</a>
+            <a href="contact.html" onclick="closeMenu()">Liên hệ</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tel:0901234567" class="nav-mobile-cta" onclick="closeMenu()">📞 Tư vấn ngay</a>
+        </nav>
 
-    <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
-</header>
+        <div class="nav-right">
+            <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
 
     <!-- HERO -->
     <section class="hero">
@@ -144,78 +153,86 @@
                 <p>Hơn 500 công trình hoàn thành, mỗi ngôi nhà là một kiệt tác truyền thống</p>
             </div>
             <div class="project-grid">
+                <!-- ═══ CARD 1: Nhà 3 gian ═══
+                     🖼️ ĐỔI ẢNH: thay /image/img1.jpg bằng ảnh mới
+                     Kích thước đề nghị: 800x600px trở lên -->
                 <div class="project-card">
                     <div class="card-img">
-                        <div class="card-img-inner">
-                            <div class="ico">🏡</div><span>Nhà gỗ 3 gian</span>
-                        </div><span class="tag">Nhà 3 gian</span>
+                        <img src="/image/img1.jpg" alt="Nhà gỗ 3 gian truyền thống">
+                        <span class="tag">Nhà 3 gian</span>
                     </div>
                     <div class="card-body">
                         <h3>Nhà gỗ 3 gian truyền thống</h3>
                         <div class="card-meta">120m² · Gỗ Lim · Thanh Hóa</div>
                         <div class="card-foot">
-                            <div class="price">1,2 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
-                                tiết →</button>
+                            <div class="price">1,2 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi tiết →</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- ═══ CARD 2: Nhà thờ họ ═══
+                     🖼️ ĐỔI ẢNH: thay /image/img2.jpg bằng ảnh mới
+                     Kích thước đề nghị: 800x600px trở lên -->
                 <div class="project-card">
                     <div class="card-img">
-                        <div class="card-img-inner">
-                            <div class="ico">🏛️</div><span>Nhà thờ họ</span>
-                        </div><span class="tag">Nhà thờ tổ</span>
+                        <img src="/image/img2.jpg" alt="Nhà thờ họ đặc biệt">
+                        <span class="tag">Nhà thờ tổ</span>
                     </div>
                     <div class="card-body">
                         <h3>Nhà thờ họ đặc biệt</h3>
                         <div class="card-meta">180m² · Gỗ Hương · Nam Định</div>
                         <div class="card-foot">
-                            <div class="price">3,5 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
-                                tiết →</button>
+                            <div class="price">3,5 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi tiết →</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- ═══ CARD 3: Nhà 5 gian ═══
+                     🖼️ ĐỔI ẢNH: thay /image/img3.jpg bằng ảnh mới
+                     Kích thước đề nghị: 800x600px trở lên -->
                 <div class="project-card">
                     <div class="card-img">
-                        <div class="card-img-inner">
-                            <div class="ico">🏠</div><span>Nhà 5 gian</span>
-                        </div><span class="tag">Nhà 5 gian</span>
+                        <img src="/image/img3.jpg" alt="Nhà gỗ 5 gian rộng rãi">
+                        <span class="tag">Nhà 5 gian</span>
                     </div>
                     <div class="card-body">
                         <h3>Nhà gỗ 5 gian rộng rãi</h3>
                         <div class="card-meta">200m² · Gỗ Gõ · Ninh Bình</div>
                         <div class="card-foot">
-                            <div class="price">2,8 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
-                                tiết →</button>
+                            <div class="price">2,8 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi tiết →</button>
                         </div>
                     </div>
                 </div>
+                <!-- ═══ CARD 4: Nhà kiểu Tây ═══
+                     🖼️ ĐỔI ẢNH: thay /image/img6.jpg bằng ảnh mới
+                     Kích thước đề nghị: 800x600px trở lên -->
                 <div class="project-card">
                     <div class="card-img">
-                        <div class="card-img-inner">
-                            <div class="ico">🏡</div><span>Nhà kiểu Tây</span>
-                        </div><span class="tag">Kiểu Tây</span>
+                        <img src="/image/img6.jpg" alt="Nhà gỗ phong cách Tây">
+                        <span class="tag">Kiểu Tây</span>
                     </div>
                     <div class="card-body">
                         <h3>Nhà gỗ phong cách Tây</h3>
                         <div class="card-meta">140m² · Gỗ Lim · Hà Nội</div>
                         <div class="card-foot">
-                            <div class="price">1,8 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
-                                tiết →</button>
+                            <div class="price">1,8 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi tiết →</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- ═══ CARD 5: Nhà cổ truyền ═══
+                     🖼️ ĐỔI ẢNH: thay /image/img5.jpg bằng ảnh mới
+                     Kích thước đề nghị: 800x600px trở lên -->
                 <div class="project-card">
                     <div class="card-img">
-                        <div class="card-img-inner">
-                            <div class="ico">🎋</div><span>Nhà cổ</span>
-                        </div><span class="tag">Cổ truyền</span>
+                        <img src="/image/img5.jpg" alt="Nhà gỗ cổ truyền thống">
+                        <span class="tag">Cổ truyền</span>
                     </div>
                     <div class="card-body">
                         <h3>Nhà gỗ cổ truyền thống</h3>
                         <div class="card-meta">150m² · Gỗ Mít · Bắc Ninh</div>
                         <div class="card-foot">
-                            <div class="price">2,2 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi
-                                tiết →</button>
+                            <div class="price">2,2 tỷ <span>/ công trình</span></div><button class="card-btn">Xem chi tiết →</button>
                         </div>
                     </div>
                 </div>
@@ -418,46 +435,57 @@
                 <p>100% ảnh chụp thực tế các công trình đã bàn giao, không qua chỉnh sửa</p>
             </div>
             <div class="gallery-grid">
+                <!-- 🖼️ ĐỔI ẢNH 1 (ô lớn): thay /image/img1.jpg -->
                 <div class="gallery-item gi-large">
-                    <div class="gallery-placeholder">
-                        <span class="g-ico">🏡</span>
+                    <img src="/image/img1.jpg" alt="Nhà 5 gian – Ninh Bình · Gỗ Lim">
+                    <div class="gallery-caption">
+                        <span class="g-badge">Hoàn thành 2024</span>
                         <span class="g-lbl">Nhà 5 gian – Ninh Bình · Gỗ Lim</span>
-                        <span class="g-badge">Hoàn thành 2024</span>
                     </div>
                 </div>
+
+                <!-- 🖼️ ĐỔI ẢNH 2: thay /image/img2.jpg -->
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <span class="g-ico">🏛️</span>
+                    <img src="/image/img2.jpg" alt="Nhà thờ họ – Nam Định">
+                    <div class="gallery-caption">
+                        <span class="g-badge">Hoàn thành 2024</span>
                         <span class="g-lbl">Nhà thờ họ – Nam Định</span>
-                        <span class="g-badge">Hoàn thành 2024</span>
                     </div>
                 </div>
+
+                <!-- 🖼️ ĐỔI ẢNH 3: thay /image/img3.jpg -->
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <span class="g-ico">🪵</span>
-                        <span class="g-lbl">Chi tiết chạm khắc</span>
+                    <img src="/image/img3.jpg" alt="Chi tiết chạm khắc">
+                    <div class="gallery-caption">
                         <span class="g-badge">Thủ công 100%</span>
+                        <span class="g-lbl">Chi tiết chạm khắc</span>
                     </div>
                 </div>
+
+                <!-- 🖼️ ĐỔI ẢNH 4: thay /image/img4.jpg -->
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <span class="g-ico">🏠</span>
-                        <span class="g-lbl">Nhà 3 gian – Thanh Hóa</span>
+                    <img src="/image/img4.jpg" alt="Nhà 3 gian – Thanh Hóa">
+                    <div class="gallery-caption">
                         <span class="g-badge">Hoàn thành 2023</span>
+                        <span class="g-lbl">Nhà 3 gian – Thanh Hóa</span>
                     </div>
                 </div>
+
+                <!-- 🖼️ ĐỔI ẢNH 5: thay /image/img5.jpg -->
                 <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <span class="g-ico">✨</span>
-                        <span class="g-lbl">Nội thất gỗ hương</span>
+                    <img src="/image/img5.jpg" alt="Nhà cổ truyền thống">
+                    <div class="gallery-caption">
                         <span class="g-badge">Gỗ cao cấp</span>
+                        <span class="g-lbl">Nhà cổ truyền thống</span>
                     </div>
                 </div>
+
+                <!-- 🖼️ ĐỔI ẢNH 6 (ô cao): thay /image/img6.jpg -->
                 <div class="gallery-item gi-tall">
-                    <div class="gallery-placeholder">
-                        <span class="g-ico">🎋</span>
-                        <span class="g-lbl">Cột kèo chạm rồng</span>
+                    <img src="/image/img6.jpg" alt="Nhà phong cách Tây">
+                    <div class="gallery-caption">
                         <span class="g-badge">Nghệ nhân 20 năm</span>
+                        <span class="g-lbl">Nhà phong cách Tây</span>
                     </div>
                 </div>
             </div>
@@ -660,6 +688,22 @@
     <a href="tel:0901234567" class="call-btn" title="Gọi ngay">📞</a>
 
     <script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        const ham = document.getElementById('hamburger');
+        const overlay = document.getElementById('navOverlay');
+        nav.classList.toggle('open');
+        ham.classList.toggle('active');
+        overlay.classList.toggle('show');
+        document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMenu() {
+        document.getElementById('navLinks').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('active');
+        document.getElementById('navOverlay').classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
     function toggleFaq(el) {
         const isOpen = el.classList.contains('open');
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
