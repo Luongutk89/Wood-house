@@ -5,28 +5,37 @@
     <meta charset="UTF-8">
     <title>Công trình</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/image/logo.png" style="height: 20px; width: 20px;" >
 </head>
 
 <body>
 
-   <!-- NAVBAR -->
-    <header class="navbar">
-    <a href="index.html" class="logo">
-        <img src="/image/logo.png" alt="Nhà Gỗ VIP">
-    </a>
+  <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo">
+            <img src="/image/logo.png" alt="Nhà Gỗ VIP">
+        </a>
 
-    <nav class="nav-links">
-        <a href="index.html">Trang chủ</a>
-        <a href="about.html">Giới thiệu</a>
-        <a href="projects.html">Công trình</a>
-        <a href="process.html">Quy trình</a>
-        <a href="contact.html">Liên hệ</a>
-        <a href="dashboard.html">Dashboard</a>
-    </nav>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html" onclick="closeMenu()">Trang chủ</a>
+            <a href="about.html" onclick="closeMenu()">Giới thiệu</a>
+            <a href="projects.html" onclick="closeMenu()">Công trình</a>
+            <a href="process.html" onclick="closeMenu()">Quy trình</a>
+            <a href="contact.html" onclick="closeMenu()">Liên hệ</a>
+            <a href="dashboard.html" onclick="closeMenu()">Dashboard</a>
+            <a href="tel:0901234567" class="nav-mobile-cta" onclick="closeMenu()">📞 Tư vấn ngay</a>
+        </nav>
 
-    <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
-</header>
-
+        <div class="nav-right">
+            <a href="tel:0901234567" class="nav-cta">📞 Tư vấn ngay</a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay" onclick="closeMenu()"></div>
         <!-- PROCESS -->
         <section class="process-section" id="process">
             <div class="process-inner">
